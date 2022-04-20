@@ -1,35 +1,37 @@
 #include "sort.h"
 
 /**
-* selection_sort - sorts array
-* @array: an array
-* @size: size of array
-*
-* Return: NONE it is voiderinoz
-*/
+ * selection_sort - Sorts an array with selection algorithm.
+ *
+ * @array: array to sort.
+ * @size: size of the array to sort.
+ *
+ * Return: Always void.
+ */
 
 void selection_sort(int *array, size_t size)
 {
-	size_t length = size;
-	size_t i = 0;
-	size_t j = 0;
-	unsigned int smallest;
-	int temp;
+	unsigned int position_small = 0;
+	size_t i = 0, j = 0;
 
-	for (i = 0; i < length - 1; i++)
+	if (array == NULL || size < 2)
 	{
-		smallest = i;
-		for (j = i + 1; j < length; j++)
+		return;
+	}
+	for (; i < size; i++)
+	{
+		position_small = size - 1;
+		for (j = i; j < size; j++)
 		{
-		if (array[j] < array[smallest])
-		smallest = j;
+			if (array[j] < array[position_small])
+			{
+				position_small = j;
+			}
 		}
-		if (smallest != i)
+		if (array[i] != array[position_small])
 		{
-		temp = array[i];
-		array[i] = array[smallest];
-		array[smallest] = temp;
-		print_array(array, size);
+			SWAP(array[i], array[position_small], int);
+			print_array((const int *)array, size);
 		}
 	}
 }
