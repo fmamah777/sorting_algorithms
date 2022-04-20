@@ -1,13 +1,11 @@
-#ifndef SORT_H_
-#define SORT_H_
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
 #ifndef SORT_H
 #define SORT_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <stddef.h>
+
+
+
 
 /* structs */
 /**
@@ -23,6 +21,11 @@ typedef struct listint_s
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
+
+#define true (1)
+#define false  (!true)
+#include "macro_functions.h"
+
 
 /* prototypes */
 void print_list(const listint_t *list);
@@ -40,4 +43,4 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
-#endif /* SORT_H */
+#endif
