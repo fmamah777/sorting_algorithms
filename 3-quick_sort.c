@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
-* Swap - swpas two array elements
-* @array1: first parameter
-* @array2: second paramter
+* Swap - a simple swap
+* @array1: position one
+* @array2: position two
 * Return - VOID
 */
 void Swap(int *array1, int *array2)
@@ -51,6 +51,7 @@ int hi_lo(int *array, int lo, int hi, size_t size)
 
 
 /**
+* quickie - lit
 * @array: an array
 * @lo: low index
 * @hi: upper index
@@ -72,9 +73,9 @@ void quickie(int *array, int lo, int hi, size_t size)
 
 
 /**
-* quick_sort - sorts the array
-* @array: array
-* @size: size of the array
+* quick_sort - sorts array
+* @array: the array
+* @size: size
 * Return: NULL
 */
 
